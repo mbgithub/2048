@@ -3,7 +3,7 @@
 
 $field-width: 500px;
 $grid-spacing: 15px;
-$grid-row-cells: 5;
+$grid-row-cells: 4;
 $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
 $tile-border-radius: 3px;
 
@@ -415,9 +415,9 @@ hr {
 
   $base: 2;
   $exponent: 1;
-  $limit: 12;
+  $limit: 11;
 
-  // Colors for all 13 states, false = no special color
+  // Colors for all 11 states, false = no special color
   $special-colors: false false, // 2
                    false false, // 4
                    #f78e48 true, // 8
@@ -429,8 +429,6 @@ hr {
                    false true, // 512
                    false true, // 1024
                    false true; // 2048
-                   false true; // 4096
-                   false true; // 8192
 
   // Build tile colors
   @while $exponent <= $limit {
@@ -485,7 +483,7 @@ hr {
     $exponent: $exponent + 1;
   }
 
-  // Super tiles (above 8192)
+  // Super tiles (above 2048)
   &.tile-super .tile-inner {
     color: $bright-text-color;
     background: mix(#333, $tile-gold-color, 95%);
@@ -570,7 +568,7 @@ hr {
   // Redefine variables for smaller screens
   $field-width: 280px;
   $grid-spacing: 10px;
-  $grid-row-cells: 5;
+  $grid-row-cells: 4;
   $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
   $tile-border-radius: 3px;
   $game-container-margin-top: 17px;
